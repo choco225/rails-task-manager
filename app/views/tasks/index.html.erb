@@ -1,0 +1,12 @@
+<h1>Tasks#index</h1>
+<!-- <p>Find me in app/views/tasks/index.html.erb</p>
+ -->
+
+<% @tasks.each do |t| %>
+  <h3><%= link_to t.name, task_path(t)%> / <%= link_to "Edit", edit_task_path(t) %></h3>
+  <!-- link_to "Some string" rails route -->
+  <p><%= t.description %></p>
+  <p><%= link_to "Delete!!", task_path(t), method: :delete %></p>
+  <% end %>
+
+<%= link_to "Make a new task", new_task_path %>
